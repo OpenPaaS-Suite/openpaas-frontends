@@ -48,7 +48,7 @@ You can override standard build using docker build arguments
 | CALENDAR_BASE_HREF       | Calendar frontend base href | /calendar/ |
 | CALENDAR_PUB_BASE_HREF   | Calendar Public frontend base href | /excal/ |
 | ADMIN_BASE_HREF          | Admin frontend base href | /admin/ |
-| APP_GRID_ITEMS           | Git treeish name for admin frontend | [{ \"name\": \"Calendar\", \"url\": \"/calendar/\" }, { \"name\": \"Contacts\", \"url\": \"/contacts/\" }, { \"name\": \"Inbox\", \"url\": \"/inbox/\" }] |
+| APP_GRID_ITEMS           | Grid frontends urls  | [{ \"name\": \"Calendar\", \"url\": \"/calendar/\" }, { \"name\": \"Contacts\", \"url\": \"/contacts/\" }, { \"name\": \"Inbox\", \"url\": \"/inbox/\" }] |
 
 ---------------------------------------
 
