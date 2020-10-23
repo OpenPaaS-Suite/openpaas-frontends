@@ -39,7 +39,6 @@ You can override standard build using docker build arguments
 | CONTACTS_GIT_TREEISH     | Git treeish name for contacts frontend | main |
 | CALENDAR_GIT_TREEISH     | Git treeish name for calendar frontend | main |
 | CALENDAR_PUB_GIT_TREEISH | Git treeish name for public calendar frontend | main |
-| CALENDAR_PUB_GIT_TREEISH | Git treeish name for public calendar frontend | main |
 | ADMIN_GIT_TREEISH        | Git treeish name for admin frontend | main |
 | INBOX_BASE_HREF          | Inbox frontend base href | /inbox/ |
 | MAILTO_BASE_HREF         | Mailto frontend base href | /mailto/ |
