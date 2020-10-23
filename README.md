@@ -9,7 +9,7 @@ Repository that contains recipes to build & publish OpenPaaS frontends :
 * Calendar Public
 * Admin
 
-Every frontends will be builded separately and available in a single Docker image and served by Nginx. 
+Every frontends is built separately and added in Docker image to be served by Nginx.
 
 Nginx locations can be find in `nginx.conf` file
 
@@ -29,17 +29,26 @@ You can override standard build using docker build arguments
 
 ---------------------------------------
 
-| Build Arg      | Description |
-| ----------- | ----------- |
-| NODE_VERSION   | NodeJS version        |
-| NGINX_VERSION   | Nginx version        |
-| INBOX_GIT_BRANCH   | Git branch name for inbox frontend        |
-| MAILTO_GIT_BRANCH   | Git branch name for mailto frontend        |
-| ACCOUNT_GIT_BRANCH   | Git branch name for account frontend        |
-| CONTACTS_GIT_BRANCH   | Git branch name for contacts frontend        |
-| CALENDAR_GIT_BRANCH   | Git branch name for calendar frontend        |
-| CALENDAR_PUB_GIT_BRANCH   | Git branch name for public calendar frontend        |
-| ADMIN_GIT_BRANCH   | Git branch name for admin frontend        |
+| Build Arg      | Description | Default Value |
+| ----------- | ----------- | ----------- |
+| NODE_VERSION             | NodeJS version | 12.19 |
+| NGINX_VERSION            | Nginx version | 1.19.3 |
+| INBOX_GIT_TREEISH        | Git treeish name for inbox frontend | main |
+| MAILTO_GIT_TREEISH       | Git treeish name for mailto frontend | main |
+| ACCOUNT_GIT_TREEISH      | Git treeish name for account frontend | main |
+| CONTACTS_GIT_TREEISH     | Git treeish name for contacts frontend | main |
+| CALENDAR_GIT_TREEISH     | Git treeish name for calendar frontend | main |
+| CALENDAR_PUB_GIT_TREEISH | Git treeish name for public calendar frontend | main |
+| CALENDAR_PUB_GIT_TREEISH | Git treeish name for public calendar frontend | main |
+| ADMIN_GIT_TREEISH        | Git treeish name for admin frontend | main |
+| INBOX_BASE_HREF          | Inbox frontend base href | /inbox/ |
+| MAILTO_BASE_HREF         | Mailto frontend base href | /mailto/ |
+| ACCOUNT_BASE_HREF        | Account frontend base href | /account/ |
+| CONTACTS_BASE_HREF       | Contacts frontend base href | /contacts/ |
+| CALENDAR_BASE_HREF       | Calendar frontend base href | /calendar/ |
+| CALENDAR_PUB_BASE_HREF   | Calendar Public frontend base href | /excal/ |
+| ADMIN_BASE_HREF          | Admin frontend base href | /admin/ |
+| APP_GRID_ITEMS           | Git treeish name for admin frontend | [{ \"name\": \"Calendar\", \"url\": \"/calendar/\" }, { \"name\": \"Contacts\", \"url\": \"/contacts/\" }, { \"name\": \"Inbox\", \"url\": \"/inbox/\" }] |
 
 ---------------------------------------
 
