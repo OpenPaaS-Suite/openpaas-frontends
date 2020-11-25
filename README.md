@@ -50,7 +50,7 @@ DOCKER_BUILDKIT=1 docker build --pull --build-arg CONTACTS_DOCKER_TAG=linagora/e
 
 # Run the image
 
-Start docker image and map local port `8080` to the nginx container port
+Start docker image and map local port `8080` to the nginx container port 
 ```sh
 docker run -d --name openpaas-front -p 8080:80 openpaas-front
 ```
@@ -96,6 +96,21 @@ You can override standard build using docker build arguments.
 | CALENDAR_PUB_BASE_HREF   | Calendar Public frontend base href | /excal/ |
 | ADMIN_BASE_HREF          | Admin frontend base href | /admin/ |
 | APP_GRID_ITEMS           | Grid frontends urls  | [{ \"name\": \"Calendar\", \"url\": \"/calendar/\" }, { \"name\": \"Contacts\", \"url\": \"/contacts/\" }, { \"name\": \"Inbox\", \"url\": \"/inbox/\" }] |
+| INBOX_AUTH_PROVIDER               | Either basic or oidc | basic |
+| INBOX_AUTH_PROVIDER_SETTINGS      | (object) configuration settings to pass to the authentication strategy handler | |
+| MAILTO_AUTH_PROVIDER               | Either basic or oidc | basic |
+| MAILTO_AUTH_PROVIDER_SETTINGS      | (object) configuration settings to pass to the authentication strategy handler | |
+| ACCOUNT_AUTH_PROVIDER               | Either basic or oidc | basic |
+| ACCOUNT_AUTH_PROVIDER_SETTINGS      | (object) configuration settings to pass to the authentication strategy handler | |
+| CONTACTS_AUTH_PROVIDER               | Either basic or oidc | basic |
+| CONTACTS_AUTH_PROVIDER_SETTINGS      | (object) configuration settings to pass to the authentication strategy handler | |
+| CALENDAR_AUTH_PROVIDER               | Either basic or oidc | basic |
+| CALENDAR_AUTH_PROVIDER_SETTINGS      | (object) configuration settings to pass to the authentication strategy handler | |
+| CALENDAR_PUB_AUTH_PROVIDER               | Either basic or oidc | basic |
+| CALENDAR_PUB_AUTH_PROVIDER_SETTINGS      | (object) configuration settings to pass to the authentication strategy handler | |
+| ADMIN_AUTH_PROVIDER               | Either basic or oidc | basic |
+| ADMIN_AUTH_PROVIDER_SETTINGS      | (object) configuration settings to pass to the authentication strategy handler | |
+
 
 ---------------------------------------
 
@@ -119,7 +134,7 @@ DOCKER_BUILDKIT=1 docker build --pull -f Dockerfile.custom --build-arg NGINX_VER
 
 # Run the image
 
-Start docker image and map local port `8080` to the nginx container port
+Start docker image and map local port `8080` to the nginx container port 
 ```sh
 docker run -d --name openpaas-front-custom -p 8080:80 openpaas-front-custom
 ```
