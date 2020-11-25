@@ -50,7 +50,7 @@ DOCKER_BUILDKIT=1 docker build --pull --build-arg CONTACTS_DOCKER_TAG=linagora/e
 
 # Run the image
 
-Start docker image and map local port `8080` to the nginx container port 
+Start docker image and map local port `8080` to the nginx container port
 ```sh
 docker run -d --name openpaas-front -p 8080:80 openpaas-front
 ```
@@ -62,13 +62,13 @@ When image is running, you are able to check container assets
 docker exec -ti openpaas-front ls /var/www
 ```
 
-## Development purpose
+## Custom builds
 
 Build all frontends on the main branch
 
 ```sh
 # Using BuildKit
-DOCKER_BUILDKIT=1 docker build --pull -f Dockerfile.dev -t openpaas-front-dev . --no-cache
+DOCKER_BUILDKIT=1 docker build --pull -f Dockerfile.custom -t openpaas-front-custom . --no-cache
 ```
 
 You can override standard build using docker build arguments.
@@ -103,14 +103,14 @@ Build frontends on the main branch and contact frontend on a custom branch `hant
 
 ```sh
 # Using BuildKit
-DOCKER_BUILDKIT=1 docker build --pull -f Dockerfile.dev --build-arg CONTACTS_GIT_TREEISH=hantt12-patch-1 -t openpaas-front-dev . --no-cache
+DOCKER_BUILDKIT=1 docker build --pull -f Dockerfile.custom --build-arg CONTACTS_GIT_TREEISH=hantt12-patch-1 -t openpaas-front-custom . --no-cache
 ```
 
 Build all frontends and overrides nginx version to `1.18.0`
 
 ```sh
 # Using BuildKit
-DOCKER_BUILDKIT=1 docker build --pull -f Dockerfile.dev --build-arg NGINX_VERSION=1.18.0 -t openpaas-front-dev . --no-cache
+DOCKER_BUILDKIT=1 docker build --pull -f Dockerfile.custom --build-arg NGINX_VERSION=1.18.0 -t openpaas-front-custom . --no-cache
 ```
 
 #### Extra option
@@ -119,14 +119,14 @@ DOCKER_BUILDKIT=1 docker build --pull -f Dockerfile.dev --build-arg NGINX_VERSIO
 
 # Run the image
 
-Start docker image and map local port `8080` to the nginx container port 
+Start docker image and map local port `8080` to the nginx container port
 ```sh
-docker run -d --name openpaas-front-dev -p 8080:80 openpaas-front-dev
+docker run -d --name openpaas-front-custom -p 8080:80 openpaas-front-custom
 ```
 
 # Check container static assets
 
 When image is running, you are able to check container assets
 ```sh
-docker exec -ti openpaas-front-dev ls /var/www
+docker exec -ti openpaas-front-custom ls /var/www
 ```
